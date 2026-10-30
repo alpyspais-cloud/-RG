@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Колледж</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark">К</span>
+                <span class="brand-copy"><strong>Колледж</strong><small>Управление</small></span>
+            </a>
+
+            <span class="sidebar-label">МЕНЮ</span>
+            <nav class="side-nav" aria-label="Основная навигация">
+                <a class="side-link active" href="#overview"><span class="nav-icon">⌂</span>Обзор</a>
+                <a class="side-link" href="#students"><span class="nav-icon">▤</span>Студенты</a>
+                <a class="side-link" href="#teachers"><span class="nav-icon">♙</span>Преподаватели</a>
+                <a class="side-link" href="#groups"><span class="nav-icon">▦</span>Учебные группы</a>
+                <a class="side-link" href="#attendance"><span class="nav-icon">◷</span>Посещаемость</a>
+                <a class="side-link" href="#grades"><span class="nav-icon">▥</span>Успеваемость</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note-icon">✦</div>
+                <strong>Шаг за шагом</strong>
+                <p>Собираем систему под реальные задачи колледжа.</p>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <header class="topbar">
+                <div class="breadcrumb">Рабочее пространство <span>/</span> <strong>@ViewData["Title"]</strong></div>
+                <div class="topbar-profile">
+                    <span class="profile-avatar">К</span>
+                    <span class="profile-name">Колледж</span>
+                </div>
+            </header>
+            <div class="page-content">
+                @RenderBody()
+                <footer class="page-footer">
+                    <span>Система управления колледжем</span>
+                    <span>Первая версия · Развиваем постепенно</span>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
